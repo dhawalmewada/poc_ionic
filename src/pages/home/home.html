@@ -1,14 +1,15 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar primary>
     <ion-title>
-      Ionic Blank
+      GPS PoC
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <button ion-button full (click)="getGeoLocation()">Get GeoLocation</button>
+    <div *ngIf="location">
+      <h3>Latitude : {{location.lat}}</h3>
+      <h3>Longitude : {{location.lng}}</h3>
+    </div>
 </ion-content>
