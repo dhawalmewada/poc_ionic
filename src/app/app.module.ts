@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Geolocation } from '@ionic-native/geolocation';
+import { DynamoDB } from '../providers/provider';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     StatusBar,
     Geolocation,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DynamoDB
   ]
 })
 export class AppModule {}

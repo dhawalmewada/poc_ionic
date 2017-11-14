@@ -7,9 +7,24 @@
 </ion-header>
 
 <ion-content padding>
-    <button ion-button full (click)="getGeoLocation()">Get GeoLocation</button>
-    <div *ngIf="location">
-      <h3>Latitude : {{location.lat}}</h3>
-      <h3>Longitude : {{location.lng}}</h3>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Your Name</ion-label>
+      <ion-input type="text" [(ngModel)]="prsn1"></ion-input>
+    </ion-item>
+    <button ion-button full (click)="getGeoLocation(prsn1,true)">Get GeoLocation</button>
+    <div *ngIf="prsn1location">
+      <h3>Latitude : {{prsn1location.lat}}</h3>
+      <h3>Longitude : {{prsn1location.lng}}</h3>
     </div>
+    <ion-item>
+      <ion-label floating>Person to Track</ion-label>
+      <ion-input type="text" [(ngModel)]="prsn2"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="getGeoLocation(prsn2)">Get GeoLocation</button>
+  <div *ngIf="prsn2location">
+    <h3>Latitude : {{prsn2location.lat}}</h3>
+    <h3>Longitude : {{prsn2location.lng}}</h3>
+  </div>
 </ion-content>
